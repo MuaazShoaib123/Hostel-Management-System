@@ -1,0 +1,143 @@
+﻿<Window x:Class="MyProject.DeusPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyProject"
+        xmlns:fa ="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="DeusPanel" Height="550" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="0.6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.35*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.35*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Background="#FF12548B">
+            <fa:ImageAwesome Grid.Column="1" Grid.Row="1" Icon="Edit" Foreground="White" HorizontalAlignment="Center" Width="92" VerticalAlignment="Center" Height="74" Margin="0,16,0,3"/>
+        </DockPanel>
+        <DockPanel Grid.Row="2" Background="#FF12548B">
+            <Button x:Name="BackButton" Content="Back" Background="Transparent" Foreground ="White" FontSize="20" BorderBrush="White" Click="BackButton_Click" VerticalAlignment="Bottom" Margin="3"/>
+        </DockPanel>
+        <DockPanel Background="#FF12548B" Grid.Column="0" Grid.Row="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2.8*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="DEUS" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="25" FontWeight="Bold"/>
+                <fa:ImageAwesome Icon="Money" Foreground="White" Grid.Column="1" Grid.Row="2" Margin="15,10,0,5"/>
+                <fa:ImageAwesome Icon="Edit" Foreground="White" Grid.Column="1" Grid.Row="3" Margin="17,10,0,3" RenderTransformOrigin="0.826,0.867"/>
+                <fa:ImageAwesome Icon="Search" Foreground="White" Grid.Column="1" Grid.Row="4" Margin="15,7,0,4.5" />
+                <fa:ImageAwesome Icon="Trash" Foreground="White" Grid.Column="1" Grid.Row="5" Margin="10,6,0,10"/>
+                <Button Grid.Column="2" Grid.Row="2" x:Name="AssignBtn" Content="Assign Dues" Background="Transparent" Foreground="White" FontSize="14" BorderBrush="Transparent" Click="AssignBtn_Click" />
+                <Button Grid.Column="3" Grid.Row="3" x:Name="UpdateBtn" Content="Update Deus" Background="Transparent" Foreground="White" FontSize="14" BorderBrush="Transparent" Click="UpdateBtn_Click"  />
+                <Button Grid.Column="4" Grid.Row="4" x:Name="RetreievBtn" Content="Retreieve Dues" Background="Transparent" Foreground="White" FontSize="14" BorderBrush="Transparent" Click="RetreievBtn_Click" />
+                <Button Grid.Column="5" Grid.Row="5" x:Name="DeleteBtn" Content="Remove Deus" Background="Transparent" Foreground="White" FontSize="14" BorderBrush="Transparent" Click="DeleteBtn_Click"/>
+            </Grid>
+        </DockPanel>
+        <DockPanel x:Name="StudentViewPanel" Grid.Row="1" Grid.Column="2" Background="#FF12548B" Margin="3" Visibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="0.12*"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="StudentViewGrid" Background="AliceBlue"/>
+                <Button Grid.Row="1" x:Name="SelectStudentBtn" Content="Select" Background="AliceBlue" Foreground="#FF12548B" FontFamily="Times New Roman" FontWeight="Bold" FontSize="20" BorderBrush="#FF12548B"/>
+            </Grid>
+        </DockPanel>
+        <DockPanel x:Name="DuesPanel" Grid.Row="1" Grid.Column="3" Background="#FF12548B" Margin="3" Visibility="Visible">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.7*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.4*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Dues" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text=" Panel" Grid.Column="1" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <Label Content="Student Name" Grid.Row="2" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
+                <Label Content="Reg Number" Grid.Row="3" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
+                <Label Content="Amount" Grid.Row="4" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
+                <Label Content="Due Date" Grid.Row="5" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
+                <Button x:Name="ComitDeusButton" Content="UPDATE" FontSize="15" FontWeight="DemiBold" Background="Transparent" Foreground="White" Grid.Row="6" Grid.Column="1" BorderBrush="AliceBlue" Margin="4" VerticalAlignment="Bottom" Click="ComitDeusButton_Click_1"/>
+                <TextBox x:Name="NameBox" Grid.Row="2" Grid.Column="1" Margin="9"/>
+                <TextBox x:Name="RegNumberBox" Grid.Row="3" Grid.Column="1" Margin="9"/>
+                <ComboBox x:Name="AmountBox" Grid.Row="4" Grid.Column="1" Margin="9"/>
+                <DatePicker x:Name="DeuDatePicker" Grid.Column="1" Grid.Row="5" Foreground="Black" Margin="5"/>
+            </Grid>
+        </DockPanel>
+        <DockPanel x:Name="RetreievePanel" Background="#FF12548B" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="RetreiveGrid" Background="AliceBlue"/>
+                <Button Content="CLOSE" x:Name="CloseButton" FontSize="15" Grid.Row="1" Background="Transparent" Foreground="White" BorderBrush="AliceBlue" Click="CloseButton_Click"/>
+            </Grid>
+        </DockPanel>
+        <DockPanel x:Name="AssignPanel1" Background="#FF12548B" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="Grid1" />
+                <DockPanel x:Name="DuesPanel1" Grid.Row="1" Grid.Column="3" Background="#FF12548B" Margin="3" Visibility="Visible">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0.1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.7*"/>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="0.3*"/>
+                            <RowDefinition Height="0.3*"/>
+                            <RowDefinition Height="0.3*"/>
+                            <RowDefinition Height="0.3*"/>
+                            <RowDefinition Height="0.4*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Deus" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                        <TextBlock Text=" Panel" Grid.Column="1" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <Label Content="Amount" Grid.Row="2" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
+                        <Label Content="Due Date" Grid.Row="3" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="15"/>
+                        <Label Content="After Due Date" Grid.Row="4" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" FontSize="14"/>
+                        <Button x:Name="ComitDeusButton1" Content="ASSIGN" FontSize="15" FontWeight="DemiBold" Background="Transparent" Foreground="White" Grid.Row="6" Grid.Column="1" BorderBrush="AliceBlue" Margin="4"/>
+                        <ComboBox x:Name="AmountBox2" Grid.Row="4" Grid.Column="1" Margin="4"/>
+                        <ComboBox x:Name="AmountBox1" Grid.Row="2" Grid.Column="1" Margin="4"/>
+                        <DatePicker x:Name="DeuDatePicker1" Grid.Column="1" Grid.Row="3" Foreground="Black" Margin="2"/>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

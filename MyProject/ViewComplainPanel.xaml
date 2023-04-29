@@ -1,0 +1,89 @@
+﻿<Window x:Class="MyProject.ViewComplainPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyProject"
+        xmlns:fa ="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ViewComplainPanel" Height="550" Width="1000">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.055*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.087*"/>
+                </Grid.ColumnDefinitions>
+                <Menu Background="#FF12548B" Grid.Column="0">
+                    <MenuItem x:Name="ViewItwm" Header="View" FontSize="18" BorderBrush="White" Foreground="White" Click="ViewItwm_Click"/>
+                    <MenuItem x:Name="DeleteItem" Header="Delete" FontSize="18" BorderBrush="White" Foreground="White" Click="DeleteItem_Click"/>
+                    <MenuItem x:Name="SearchItem" Header="Search" FontSize="18" BorderBrush="White" Foreground="White" Click="DeleteItem_Click"/>
+                    <TextBox x:Name="SearchBox" Width="114" Height="20"/>
+                </Menu>
+                <Menu Grid.Column="1" Background="#FF12548B">
+                    <MenuItem x:Name="BackItem" Header="Go Back" FontSize="18" BorderBrush="White" Foreground="White" HorizontalAlignment="Right" Click="BackItem_Click" />
+                </Menu>
+            </Grid>
+        </DockPanel>
+        <DockPanel Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.2*"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="140*"/>
+                    <ColumnDefinition Width="35*"/>
+                    <ColumnDefinition Width="36*"/>
+                    <ColumnDefinition Width="59*"/>
+                    <ColumnDefinition Width="492*"/>
+                    <ColumnDefinition Width="220*"/>
+                </Grid.ColumnDefinitions>
+                <DockPanel x:Name="ViewPanel" Grid.Row="1" Grid.Column="4" Background="#FF12548B" Visibility="Collapsed" Margin="10" Grid.ColumnSpan="2">
+                    <DockPanel Background="AliceBlue" Margin="2">
+                        <DockPanel Background="#FF12548B" Margin="5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="0.12*"/>
+                                </Grid.RowDefinitions>
+                                <DataGrid Background="AliceBlue"/>
+                                <Button x:Name="CloseBtn" Grid.Row="1" Background="Transparent" Foreground="White" Content="CLOSE" FontSize="16" BorderBrush="White" Margin="1" Click="CloseBtn_Click"/>
+                            </Grid>
+                        </DockPanel>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel x:Name="DeletePanel" Grid.Row="1" Grid.Column="4" Background="#FF12548B" Visibility="Collapsed" Margin="10" Grid.ColumnSpan="2" >
+                    <DockPanel Background="AliceBlue" Margin="2">
+                        <DockPanel Background="#FF12548B" Margin="5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="0.12*"/>
+                                </Grid.RowDefinitions>
+                                <DataGrid Background="AliceBlue"/>
+                                <DockPanel Grid.Row="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button x:Name="CloseBtn1" Grid.Row="1" Background="Transparent" Foreground="White" Content="CLOSE" FontSize="16" BorderBrush="White" Margin="1" Click="CloseBtn1_Click"/>
+                                        <Button Grid.Row="1" Grid.Column="1" Background="Transparent" Foreground="White" Content="DELETE" FontSize="16" BorderBrush="White" Margin="1"/>
+                                    </Grid>
+                                </DockPanel>
+                            </Grid>
+                        </DockPanel>
+                    </DockPanel>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

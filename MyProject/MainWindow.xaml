@@ -1,0 +1,109 @@
+﻿<Window x:Class="MyProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa ="http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:MyProject"
+        mc:Ignorable="d"
+        
+        Title="Hostel Management System" Height="550" Width="1000"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFFBFBFB">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        
+        <DockPanel Grid.Column="0" Background="#FF12548B">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0.3*"/>
+                </Grid.RowDefinitions>
+                <fa:ImageAwesome Icon="AddressBook" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="75,0,69,10" Height="91" Width="85"/>
+            </Grid>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="1" Background="#FF12548B" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <fa:ImageAwesome Icon="Group" Foreground="White" Margin="0,10" Width="42" HorizontalAlignment="Right" />
+            <Button x:Name="StudentButton" Content="Student Panel"  HorizontalAlignment="Center" Background="Transparent" Foreground="White"  FontSize="14" BorderBrush="Transparent" Click="StudentButton_Click" Width="163" />
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="2" Background="#FF12548B">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <fa:ImageAwesome Icon="Male" Foreground="White" Margin="0,10" Width="38" HorizontalAlignment="Right"/>
+            <Button x:Name="HostelButton" Content="Hostel Panel" Background="Transparent" Foreground="White" FontSize="14" BorderBrush="Transparent" Click="HostelButton_Click" Width="164"/>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="3" Background="#FF12548B">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <fa:ImageAwesome Icon="Hotel" Foreground="White" Margin="0,10" Width="48" HorizontalAlignment="Right"/>
+            <Button x:Name="AllocateButton" Content="Allocate Room" Background="Transparent" Foreground="White"  FontSize="14" BorderBrush="Transparent" Click="AllocateButton_Click"/>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="4" Background="#FF12548B">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <fa:ImageAwesome Icon="Money" Foreground="White" Margin="0,10" Width="47" HorizontalAlignment="Right"/>
+            <Button x:Name="DeusButton" Content="Dues Panel"  Background="Transparent" Foreground="White"  FontSize="14" BorderBrush="Transparent" Click="DeusButton_Click"/>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="5" Background="#FF12548B">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <fa:ImageAwesome Icon="Adjust" Foreground="White" Margin="0,13,0,11" Width="38" HorizontalAlignment="Right"/>
+            <Button x:Name="FineButton" Content="Fine Panel"  Background="Transparent" Foreground="White"  FontSize="14" BorderBrush="Transparent" Click="FineButton_Click"/>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="6" Background="#FF12548B">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <fa:ImageAwesome Icon="Eye" Foreground="White" Margin="0,13" Width="40" HorizontalAlignment="Right" RenderTransformOrigin="1.048,0.587"/>
+            <Button x:Name="VisitorButton" Content="Complains "  Background="Transparent" Foreground="White"  FontSize="14" BorderBrush="Transparent" Click="VisitorButton_Click"/>
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="7" Background="#FF12548B">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="LogOutButton" Content="Log Out"  Background="Transparent" Foreground="White" FontSize="14" BorderBrush="Transparent"  VerticalAlignment="Bottom" Height="43" Click="LogOutButton_Click" Margin="3"/>
+            </Grid>
+
+        </DockPanel>
+
+    </Grid>
+</Window>
