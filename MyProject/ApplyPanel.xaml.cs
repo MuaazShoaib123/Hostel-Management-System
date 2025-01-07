@@ -71,8 +71,9 @@ namespace MyProject
 
         private void ApplyBtn_Click_1(object sender, RoutedEventArgs e)
         {
+            double Merit =  MeriCalculator();
            // MessageBox.Show(CHECKUsername);
-          //  MessageBox.Show(CHECKPassword);
+           //  MessageBox.Show(CHECKPassword);
             int gender = 0;
             var con = Configuration.getInstance().getConnection();
             SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[Person](FirstName,LastName,Contact,Email,Gender) VALUES (@FirstName,@LastName, @Contact,@Email, @Gender)", con);
@@ -178,13 +179,18 @@ namespace MyProject
             cmd2.Parameters.AddWithValue("@EcatMarks", int.Parse(Ecattxtbox.Text));
             cmd3.Parameters.AddWithValue("@MatricMarks", int.Parse(Matrictxt.Text));
             cmd3.Parameters.AddWithValue("@FSCMarks", int.Parse(FscTxtbox.Text));
-            cmd3.Parameters.AddWithValue("@EcatMarks", int.Parse(Ecattxtbox.Text))
-                ;
+            cmd3.Parameters.AddWithValue("@EcatMarks", int.Parse(Ecattxtbox.Text));
+            cmd3.Parameters.AddWithValue("@Merit", Merit);
             cmd.ExecuteNonQuery();
             cmd1.ExecuteNonQuery();
             cmd2.ExecuteNonQuery();
             cmd3.ExecuteNonQuery();
             MessageBox.Show("Successfully saved");
+        }
+        private double MeriCalculator()
+        {
+            double Merit = int.Parse(FscTxtbox.Text)*0.50 + int.Parse(Matrictxt.Text)*0.20 + int.Parse(Ecattxtbox.Text) * 0.30;
+            return Merit;
         }
     }
 }
